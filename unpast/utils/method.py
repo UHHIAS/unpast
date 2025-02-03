@@ -858,7 +858,7 @@ def run_WGCNA(
     from datetime import datetime
 
     now = datetime.now()
-    fname = "tmpWGCNA_" + now.strftime("%y.%m.%d_%H:%M:%S") + ".tsv"
+    fname = "tmpWGCNA_" + now.strftime("%y.%m.%d_%H-%M-%S") + ".tsv"
     if len(tmp_prefix) > 0:
         fname = tmp_prefix + "." + fname
 
