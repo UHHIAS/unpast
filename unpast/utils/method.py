@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 from time import time
 import math
+from pathlib import Path
 
 from scipy.interpolate import interp1d
 from scipy.stats import chi2_contingency
@@ -883,9 +884,7 @@ def run_WGCNA(
         print("\tRunning WGCNA for", fname, "...", file=sys.stdout)
     if not rscr_path:
         # assume run_WGCNA.R is in the same folder
-        rscr_path = (
-            "/".join(os.path.realpath(__file__).split("/")[:-1]) + "/run_WGCNA.R"
-        )
+        rscr_path = str(Path(__file__).parent / "run_WGCNA.R")
 
     binarized_expressions_ = binarized_expressions.loc[:, :].copy()
 
